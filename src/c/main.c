@@ -4,7 +4,7 @@ typedef unsigned char uint8t;
 
 int main(void)
 {
-    PBDDR = (1<<5);
+    PBDDR = 0b00100000; //(1<<5)
 
     PBDR = 0b00000000;
 
