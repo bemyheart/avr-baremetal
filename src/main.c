@@ -7,5 +7,6 @@ int main(void)
     PBDDR = (1<<5);
 
     PBDR = 0b00000000;
+
     return 0;
 }

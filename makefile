@@ -5,14 +5,20 @@ PROGRAMMER = arduino
 BUILDDIR = ./build
 
 #building the programm going through all the stages
-default: object elf hex
+default: obj ass elf hex
 
 # making object files
-object:
+obj:
 	@echo -n "Making obj files..."
 	@avr-gcc ./src/main.c -I./include -Os -Wall -mmcu=${BOARD} -c -o${BUILDDIR}/main.o
 	@echo "done"
 
+# making assemvbler files in addition to object for debugging and control
+ass:
+	@echo -n "Making ass files..."
+	@avr-gcc ./src/main.c -I./include -Os -Wall -mmcu=${BOARD} -S -o${BUILDDIR}./main.s
+	@echo "done"
+	
 # making executable file from all object files and linking libraries
 elf:
 	@echo -n "Making elf files..."
