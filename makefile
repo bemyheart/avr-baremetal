@@ -10,7 +10,7 @@ COMARGS = -I${INCDIR} -Os -Wall -mmcu=${BOARD}
 
 #building the programm going through all the stages
 # can switch between pipelines: allC or allS
-default: allS
+default: allC
 
 ## c pipeline #################################################
 

@@ -1,12 +1,17 @@
-#include "basicIO.h"
+#include "customSys.h"
+#include "customIo.h"
+#include "customDelay.h"
 
-typedef unsigned char uint8t;
 
 int main(void)
 {
-    PBDDR = 0b00100000; //(1<<5)
+    PBDDR |= 1<<PIN13; 
+    PBOUT |= 0;
 
-    PBDR = 0b00000000;
-
+    while(1)
+    {
+        PBOUT ^= 1<<PIN13;
+        delay(3000);
+    }
     return 0;
 }
