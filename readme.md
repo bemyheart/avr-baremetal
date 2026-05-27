@@ -12,5 +12,7 @@ Core goal is to learn how basic components and libraries work not only on avr bu
 
 ### Notes
 
+bugreport in buzzer
+
 get new kb?
 think about adding schematics
